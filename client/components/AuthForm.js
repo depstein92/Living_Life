@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class AuthForm extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +36,8 @@ class AuthForm extends Component {
           <div className="errors">
             {this.props.errors.map(error => <div key={error}>{error}</div>)}
           </div>
-          <button className="btn">Submit</button>
+          <Button>
+          Submit</Button>
         </form>
       </div>
     );
