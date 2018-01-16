@@ -3,6 +3,7 @@ import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
 import query from '../queries/CurrentUser';
 import mutation from '../mutations/Logout';
+import { Menu } from 'semantic-ui-react';
 
 class Header extends Component {
   onLogoutClick() {
@@ -22,30 +23,32 @@ class Header extends Component {
       );
     } else {
       return (
-        <div>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </div>
+        <Menu.Menu position="right"
+        style={{ width: "200px",
+                 display: "flex",
+                 flexDirection: "row",
+                }}>
+        <Menu.Item style={{ alignSelf: "flex-start"}}>
+           <Link to="/signup">Signup</Link>
+        </Menu.Item>
+         <Menu.Item style={{ alignSelf: "flex-end"}}>
+           <Link to="/login">Login</Link>
+         </Menu.Item>
+      </Menu.Menu>
       );
     }
   }
 
   render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
+      <Menu tabular>
+        <Menu.Item>
           <Link to="/" className="brand-logo left">
             Home
           </Link>
-          <ul className="right">
+        </Menu.Item>
             {this.renderButtons()}
-          </ul>
-        </div>
-      </nav>
+      </Menu>
     );
   }
 }

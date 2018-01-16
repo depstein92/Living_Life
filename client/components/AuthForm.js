@@ -16,17 +16,15 @@ class AuthForm extends Component {
 
   render() {
     return (
-      <div className="row">
-        <Form onSubmit={this.onSubmit.bind(this)} className="col s6">
-          <div className="input-field">
+      <Segment inverted style={{ width: "40%"}}>
+        <Form inverted onSubmit={this.onSubmit.bind(this)}>
+          <Form.Group widths='equal'>
             <Form.Input
               fluid id='form-subcomponent-shorthand-input-first-name'
               placeholder="Email"
               value={this.state.email}
               onChange={e => this.setState({ email: e.target.value })}
             />
-          </div>
-          <div className="input-field">
             <Form.Input
               fluid id='form-subcomponent-shorthand-input-first-name'
               placeholder="Password"
@@ -34,30 +32,15 @@ class AuthForm extends Component {
               value={this.state.password}
               onChange={e => this.setState({ password: e.target.value})}
             />
-          </div>
+          </Form.Group>
           <div className="errors">
             {this.props.errors.map(error => <div key={error}>{error}</div>)}
           </div>
-          <Button>
-          Submit</Button>
+          <Button>Submit</Button>
         </Form>
-      </div>
+      </Segment>
     );
   }
 }
-
-
-const FormExampleInverted = () => (
-  <Segment inverted>
-    <Form inverted>
-      <Form.Group widths='equal'>
-        <Form.Input fluid label='First name' placeholder='First name' />
-        <Form.Input fluid label='Last name' placeholder='Last name' />
-      </Form.Group>
-      <Form.Checkbox label='I agree to the Terms and Conditions' />
-      <Button type='submit'>Submit</Button>
-    </Form>
-  </Segment>
-)
 
 export default AuthForm;
