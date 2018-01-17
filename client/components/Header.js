@@ -19,7 +19,13 @@ class Header extends Component {
 
     if (user) {
       return (
-        <li><a onClick={this.onLogoutClick.bind(this)}>Logout</a></li>
+        <Menu.Menu position="right"
+        style={{ width: "200px",
+                 display: "flex",
+                 flexDirection: "row",
+                }}>
+        <Menu.Item><a className="Link" onClick={this.onLogoutClick.bind(this)}>Logout</a></Menu.Item>
+        </Menu.Menu>
       );
     } else {
       return (
@@ -29,10 +35,10 @@ class Header extends Component {
                  flexDirection: "row",
                 }}>
         <Menu.Item style={{ alignSelf: "flex-start"}}>
-           <Link to="/signup">Signup</Link>
+           <Link className="Link" to="/signup">Signup</Link>
         </Menu.Item>
          <Menu.Item style={{ alignSelf: "flex-end"}}>
-           <Link to="/login">Login</Link>
+           <Link className="Link" to="/login">Login</Link>
          </Menu.Item>
       </Menu.Menu>
       );
@@ -43,7 +49,7 @@ class Header extends Component {
     return (
       <Menu tabular>
         <Menu.Item>
-          <Link to="/" className="brand-logo left">
+          <Link to="/" className="Link">
             Home
           </Link>
         </Menu.Item>

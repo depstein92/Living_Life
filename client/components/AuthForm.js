@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Segment } from 'semantic-ui-react';
+import '../styles/main.scss'
 
 class AuthForm extends Component {
   constructor(props) {

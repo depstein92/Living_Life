@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { Component} from 'react';
 
-export default () => {
-  return <div>You are logged in.</div>
-};
+
+class DashBoard extends Component{
+  // constructor(props){
+  //   super(props);
+  // }
+
+ render(){
+   return(
+     <h1>DashBoard</h1>
+   )
+ }
+
+}

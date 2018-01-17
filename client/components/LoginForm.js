@@ -5,6 +5,7 @@ import { graphql } from 'react-apollo';
 import query from '../queries/CurrentUser';
 import { hashHistory } from 'react-router';
 
+
 class LoginForm extends Component {
   constructor(props) {
     super(props);
