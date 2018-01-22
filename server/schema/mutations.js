@@ -4,6 +4,7 @@ const {
   GraphQLString
 } = graphql;
 const UserType = require('./types/user_type');
+const DoctorType = require('./types/')
 const AuthService = require('../services/auth');
 
 const mutation = new GraphQLObjectType({
@@ -35,6 +36,12 @@ const mutation = new GraphQLObjectType({
       },
       resolve(parentValue, { email, password }, req) {
         return AuthService.login({ email, password, req });
+      }
+    },
+    listDoctor: { //Where I Start
+      type: DoctorType,
+      args: {
+
       }
     }
   }
