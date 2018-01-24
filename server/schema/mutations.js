@@ -98,7 +98,74 @@ const mutation = new GraphQLObjectType({
           .then(res => res.data.forEach(obj => { return obj; }))
           .catch(err => console.log(err));
       }
-    }
+    },
+    wordsSpelledLike: {
+      type: WordType,
+      args: { word: { type: GraphQLString } },
+      resolve(parentValue, { word }){
+        return axios.get(`https://api.datamuse.com/words?sp=${ word }`)
+         .then(res => res.data.forEach(obj => { return obj; }))
+         .catch(err => console.log(err));
+      }
+    },
+    wordsRhymeWith: {
+      type: WordType,
+      args: { word: { type: GraphQLString } },
+      resolve(parentValue, { word }){
+        return axios.get(`https://api.datamuse.com/words?rel_rhy=${ word }`)
+         .then(res => res.data.forEach(obj => { return obj; }))
+         .catch(err => console.log(err));
+      }
+    },
+    wordsRhymeWithRelatedToo: {
+      type: WordType,
+      args: {
+        firstWord: { type: GraphQLString },
+        secWord: { type: GraphQLString }
+      },
+      resolve(parentValue, { firstWord, secondWord }){
+        axios.get(`https://api.datamuse.com/words?ml=${firstWord}&rel_rhy=${secWord}`)
+          .then(res => res.data.forEach(obj => { return obj;}))
+          .catch(err => console.log(err));
+      }
+    },
+    wordAdjDescribe:{
+      type: WordType,
+      args: { word: { type: GraphQLString } },
+      resolve(parentValue, { word }){
+        return axios.get(`https://api.datamuse.com/words?rel_jjb=${ word }`)
+         .then(res => res.data.forEach(obj => { return obj; }))
+         .catch(err => console.log(err));
+      }
+    },
+    wordNounDescribeAdj:{
+      type: WordType,
+      args: { word: { type: GraphQLString } },
+      resolve(parentValue, { word }){
+        return axios.get(`https://api.datamuse.com/words?rel_jja=${ word }`)
+         .then(res => res.data.forEach(obj => { return obj; }))
+         .catch(err => console.log(err));
+      }
+    },
+    wordStrongRel:{
+      type: WordType,
+      args: { word: { type: GraphQLString } },
+      resolve(parentValue, { word }){
+        return axios.get(`https://api.datamuse.com/words?/rel_trg=${ word }`)
+         .then(res => res.data.forEach(obj => { return obj; }))
+         .catch(err => console.log(err));
+      }
+    },
+    suggestedWords:{
+      type: WordType,
+      args: { word: { type: GraphQLString } },
+      resolve(parentValue, { word }){
+        return axios.get(`https://api.datamuse.com/sug?s=${ word }`)
+         .then(res => res.data.forEach(obj => { return obj; }))
+         .catch(err => console.log(err));
+      }
+    },
+
   }
 });
 
