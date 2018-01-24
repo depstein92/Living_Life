@@ -1,13 +1,15 @@
 const graphql = require('graphql');
+const axios = require('axios');
 const {
   GraphQLObjectType,
-  GraphQLString
+  GraphQLString,
+  GraphQLInt,
+  GraphQLFloat
 } = graphql;
 const UserType = require('./types/user_type');
-const DoctorType = require('./types/')
 const AuthService = require('../services/auth');
 
-const mutation = new GraphQLObjectType({
+const user_mutations = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
     signup: {
@@ -37,14 +39,8 @@ const mutation = new GraphQLObjectType({
       resolve(parentValue, { email, password }, req) {
         return AuthService.login({ email, password, req });
       }
-    },
-    listDoctor: { //Where I Start
-      type: DoctorType,
-      args: {
-
-      }
     }
   }
 });
 
-module.exports = mutation;
+module.exports = user_mutations;
