@@ -16,7 +16,9 @@ const WordType = new GraphQLObjectType({
       args: { word: { type: new GraphQLList(GraphQLString) } },
       resolve(parentValue, { word }){
         return axios.get(`https://api.datamuse.com/words?ml=${ word }`)
-          .then(res => { return res.data; })
+          .then(res => {
+            let arrayOfWords = res.data.map(obj => { return obj.word });
+            return arrayOfWords; })
           .catch(err => console.log(err));
      }
    }
