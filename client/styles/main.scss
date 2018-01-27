@@ -1,9 +1,87 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
  h3, .Link {
     font-family: 'Roboto Slab';
     font-size: 15px;
     line-height: 62px;
     font-weight: 30px;
     color: black;
+}
+
+.infoContainer{
+  position: relative;
+  border-style: solid;
+  border-width:1px 1px 1px 1px;
+  border-style:solid solid solid solid;
+  border-color:#cccbc6 #cccbc6 #cccbc6 #cccbc6;
+  height: 450px;
+  background-color: #c7d8c6;
+  border-radius: 7px;
+}
+.infoContainer .titleHeader{
+  position: relative;
+  font-family:'Roboto Slab';
+  font-size: 37px;
+  line-height: 62px;
+  font-weight: lighter;
+  color: black;
+  top: 70px;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  animation: fadein 1s;
+}
+
+.infoContainer .paragraph {
+  position: relative;
+  top: 70px;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  animation: fadein 2s;
+}
+
+.main-header{
+  background-color: #cccbc6;
+}
+
+.cardsLandingBackground{
+  max-width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  background-color: #efd9c1;
+}
+
+.cardsLandingBackground .cardsLandingLeft{
+  max-height: 80%;
+  margin-top: 15px !important;
+}
+
+.cardsLandingBackground .cardsLandingCenter{
+  max-height: 80%;
+
+}
+.cardsLandingBackground .cardsLandingRight{
+  max-height: 80%;
+
 }

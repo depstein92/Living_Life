@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import query from '../queries/CurrentUser';
 import mutation from '../mutations/Logout';
 import { Menu } from 'semantic-ui-react';
+import '../styles/main.scss'
 
 class Header extends Component {
   onLogoutClick() {
@@ -23,6 +24,7 @@ class Header extends Component {
         style={{ width: "200px",
                  display: "flex",
                  flexDirection: "row",
+                 backgroundColor: "#cccbc6"
                 }}>
         <Menu.Item><a className="Link" onClick={this.onLogoutClick.bind(this)}>Logout</a></Menu.Item>
         </Menu.Menu>
@@ -33,6 +35,7 @@ class Header extends Component {
         style={{ width: "200px",
                  display: "flex",
                  flexDirection: "row",
+                 backgroundColor: "#cccbc6"
                 }}>
         <Menu.Item style={{ alignSelf: "flex-start"}}>
            <Link className="Link" to="/signup">Signup</Link>
@@ -47,10 +50,10 @@ class Header extends Component {
 
   render() {
     return (
-      <Menu tabular>
+      <Menu tabular style={{backgroundColor: "#cccbc6"}} >
         <Menu.Item>
           <Link to="/" className="Link">
-            Home
+            WordGenius
           </Link>
         </Menu.Item>
             {this.renderButtons()}
