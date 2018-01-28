@@ -40,8 +40,7 @@ const RootQueryType = new GraphQLObjectType({
           .then(res => { return res.data })
           .catch(err => console.log(err));
      }
-    }
-  }
+   }
 });
 
 module.exports = RootQueryType;
