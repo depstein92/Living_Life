@@ -1,7 +1,8 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLID, GraphQLList, GraphQLString } = graphql;
 const UserType = require('./user_type');
-const WordType = require('./word_type');
+const WordsSingleRelationType = require('./wordSingleRelationType');
+const WordsDoubleRelationType = require('./wordsDoubleRelationType');
 const axios = require('axios');
 
 
@@ -14,16 +15,32 @@ const RootQueryType = new GraphQLObjectType({
         return req.user;
       }
     },
-    words: {
-      type: WordType,
-      args: { word: { type: new GraphQLList(GraphQLString)} },
-      resolve(parentValue, { word }){
-        return axios.get(`https://api.datamuse.com/words?ml=${ word }`)
+    wordsWithSingleRelation: {
+      type: WordsSingleRelationType,
+      args: {
+            word: { type: GraphQLString },
+            typeOfQuery: { type: GraphQLString }
+      },
+      resolve(parentValue, { word, typeOfQuery }){
+        return axios.get(`https://api.datamuse.com/words?${ typeOfQuery }${ word }`)
           .then(res => { return res.data })
           .catch(err => console.log(err));
       }
+    },
+    wordsWithDoubleRelation:{
+      type: WordsDoubleRelationType,
+      args: {
+       firstWord: { type: GraphQLString },
+       secondWord: { type: GraphQLString },
+       firstQuery: { type: GraphQLString },
+       secondQuery: { type: GraphQLString },
+      },
+      resolve(parentValue, { firstWord, secondWord, firstQuery, secondQuery }){
+        return axios.get(`https://api.datamuse.com/words?${ firstQuery }=${ firstWord }&${secondQuery}=${secondWord}`)
+          .then(res => { return res.data })
+          .catch(err => console.log(err));
+     }
     }
-
   }
 });
 
