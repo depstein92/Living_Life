@@ -1,10 +1,10 @@
 {
-  "name": "users",
+  "name": "WordGenius",
   "version": "1.0.0",
-  "description": "Starter pack for an auth-included graphql project",
+  "description": "WordGenius",
   "repository": {
     "type": "git",
-    "url": "github.com/stephengrider"
+    "url": "github/depstein92"
   },
   "main": "index.js",
   "scripts": {

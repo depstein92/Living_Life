@@ -49,5 +49,5 @@ not have to load an external image.
 Reducing the things a webpage has to
  load will naturally make that
  page faster.
- Reduces the size and the execution time of your code
+ Reduces the size and the execution time of code
  */
