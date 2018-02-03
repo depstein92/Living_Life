@@ -85,3 +85,19 @@
   max-height: 80%;
 
 }
+
+.containerFromGamePanel{
+  width: 80%;
+  border-style: double;
+  height: 60%;
+}
+
+.formFromGamePanel{
+  display: flex;
+  justify-content: center;
+}
+
+.inputFromGamePanel{
+  width: 500px;
+  margin-top: 10%;
+}

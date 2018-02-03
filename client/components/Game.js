@@ -1,8 +1,9 @@
 import React, { Component} from 'react';
 import DifficultyButtons from './DifficultyButtons';
 import Header from './Header';
+import GamePanel from './GamePanel';
 
-class DashBoard extends Component{
+class Game extends Component{
   // constructor(props){
   //   super(props);
   // }
@@ -11,12 +12,11 @@ class DashBoard extends Component{
    return(
      <div>
       <Header />
-      <h1>DashBoard</h1>
-      <DifficultyButtons />
+      <GamePanel />
      </div>
    )
  }
 
 }
 
-export default DashBoard;
+export default Game;
