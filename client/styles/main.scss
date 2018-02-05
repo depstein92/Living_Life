@@ -95,9 +95,44 @@
 .formFromGamePanel{
   display: flex;
   justify-content: center;
+  border-style: none;
+  align-content: center;
 }
 
 .inputFromGamePanel{
   width: 500px;
   margin-top: 10%;
+  border-style: none;
+}
+
+.carouselFrame{
+  width: 80%;
+  height: 80%;
+  border-style: solid;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+._slideInner_fhwgk_1{
+border-style: none !important;
+}
+
+.backButtonCarousel{
+  position: absolute;
+  top: 113px;
+  left: 27px;
+  width: 100px;
+  height: 538px;
+}
+
+.forwardButtonCarousel{
+  position: absolute;
+  top: 113px;
+  right: 27px;
+  width: 100px;
+  height: 538px;
+}
+.question{
+  width: inherit;
+
 }

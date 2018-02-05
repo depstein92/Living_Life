@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        use: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
         test: /\.js$/,
         exclude: /node_modules/
       },
@@ -22,6 +22,10 @@ module.exports = {
          use: [ { loader: "style-loader" },
                 { loader: "css-loader" },
                 { loader: "sass-loader" } ]
+       },
+       {
+       test: /\.css$/,
+       use: [ 'style-loader', 'css-loader' ]
        },
       {
        test: /\.(png|jpg|gif)$/, //A)
@@ -33,7 +37,12 @@ module.exports = {
            }
          }
        ]
-     }
+     },
+     {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: ['eslint-loader']
+  }
     ]
   },
   plugins: [
