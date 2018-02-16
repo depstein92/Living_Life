@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
         test: /\.js$/,
         exclude: /node_modules/
       },
@@ -37,12 +37,7 @@ module.exports = {
            }
          }
        ]
-     },
-     {
-    test: /\.js$/,
-    exclude: /node_modules/,
-    use: ['eslint-loader']
-  }
+     }
     ]
   },
   plugins: [

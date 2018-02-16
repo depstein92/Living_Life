@@ -15,18 +15,6 @@ const RootQueryType = new GraphQLObjectType({
         return req.user;
       }
     },
-    wordsWithSingleRelation: {
-      type: WordsSingleRelationType,
-      args: {
-            word: { type: GraphQLString },
-            typeOfQuery: { type: GraphQLString }
-      },
-      resolve(parentValue, { word, typeOfQuery }){
-        return axios.get(`https://api.datamuse.com/words?${ typeOfQuery }${ word }`)
-          .then(res => { return res.data })
-          .catch(err => console.log(err));
-      }
-    },
     wordsWithDoubleRelation:{
       type: WordsDoubleRelationType,
       args: {
