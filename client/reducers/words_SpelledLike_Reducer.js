@@ -1,9 +1,9 @@
-import { FETCH_WORD_SOUND_LIKE } from '../actions/getWordsSoundLikeAction';
+import { FETCH_WORD_SPELLED_LIKE } from '../actions/getWordsSpelledLikeAction';
 
-export default function FetchWordsSoundLike(state=[], action){
+export default function FetchWordsSpelledLike(state=[], action){
 
   switch(action.type){
-    case 'FETCH_WORD_SOUND_LIKE':
+    case 'FETCH_WORD_SPELLED_LIKE':
      let newArray = state.concat(action.payload.data);
       return newArray;
     /*[action.payload.data /*...state];*/

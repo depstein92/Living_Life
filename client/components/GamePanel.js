@@ -8,6 +8,7 @@ import randomLetter from 'random-letter';
 import randomWords from 'random-words';
 import WordsSimiliarSlide from '../containers/Words_Similiar_Slide';
 import WordsSoundLikeSlide from '../containers/Words_SoundLike_Slide';
+import WordsSpelledLikeSlide from '../containers/Words_SpelledLike_Slide';
 
 
 class GamePanel extends Component{
@@ -41,7 +42,7 @@ render(){
            <WordsSoundLikeSlide />
          </Slide>
          <Slide index={2}>
-           <WordsSimiliarSlide />
+           <WordsSpelledLikeSlide />
          </Slide>
        </Slider>
        <ButtonBack className="backButtonCarousel">

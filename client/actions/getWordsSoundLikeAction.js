@@ -7,7 +7,7 @@ export default function getWordsSoundLike(word){
   const wordsSoundLike = axios.get(`https://api.datamuse.com/words?sl=${word}`);
 
   return {
-    type: FETCH_WORD_SPELLED_LIKE,
+    type: FETCH_WORD_SOUND_LIKE,
     payload: wordsSoundLike
   }
 }
