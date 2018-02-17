@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import  SearchBar from './Search_Bar';
+import SearchWordsSimiliar from './SearchWordsSimiliar';
+import SearchWordsSoundLike from './SearchWordsSoundLike';
 import randomWords from 'random-words';
 
 const randomWord = randomWords(1)[0];
 
-
-class GameSlide extends Component{
+class WordsSoundLikeSlide extends Component{
   constructor(props){
     super(props);
 
@@ -17,7 +17,7 @@ class GameSlide extends Component{
 
     return (
     <div className="game_container">
-    <SearchBar randomWord={ randomWord } />
+    <SearchWordsSoundLike randomWord={ randomWord } />
      <div className="interior_game_container"
      style={{
        width: "500px",
@@ -29,7 +29,7 @@ class GameSlide extends Component{
        borderRadius:"75px"
        }}>
        <div style={{ width: "inherit", textAlign: "center"}}>
-       Words that are similiar too: { randomWord }
+       Words that Sound Like: { randomWord }
        </div>
 
     </div>
@@ -38,4 +38,4 @@ class GameSlide extends Component{
   }
 }
 
-export default GameSlide;
+export default WordsSoundLikeSlide;

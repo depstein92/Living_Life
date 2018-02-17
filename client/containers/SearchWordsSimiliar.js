@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import getWordsSimilar from '../actions/index';
+import getWordsSimilar from '../actions/getWordsSimiliarAction';
 import { bindActionCreators } from 'redux';
 
-
-
-class SearchBar extends Component{
+class SearchWordsSimiliar extends Component{
   constructor(props){
     super(props);
 
@@ -117,4 +115,4 @@ function mapDispatchToProps(dispatch){
   return bindActionCreators({ getWordsSimilar: getWordsSimilar }, dispatch);
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps,mapDispatchToProps)(SearchWordsSimiliar);

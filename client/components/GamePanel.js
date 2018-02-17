@@ -6,8 +6,8 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../styles/main.scss';
 import randomLetter from 'random-letter';
 import randomWords from 'random-words';
-import GameSlide from '../containers/Game_Slide';
-
+import WordsSimiliarSlide from '../containers/Words_Similiar_Slide';
+import WordsSoundLikeSlide from '../containers/Words_SoundLike_Slide';
 
 
 class GamePanel extends Component{
@@ -35,13 +35,13 @@ render(){
         totalSlides={3}>
       <Slider>
          <Slide index={0}>
-           <GameSlide />
+           <WordsSimiliarSlide />
          </Slide>
          <Slide index={1}>
-           <GameSlide />
+           <WordsSoundLikeSlide />
          </Slide>
          <Slide index={2}>
-           <GameSlide />
+           <WordsSimiliarSlide />
          </Slide>
        </Slider>
        <ButtonBack className="backButtonCarousel">
